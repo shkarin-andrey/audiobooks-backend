@@ -26,7 +26,7 @@ export class ParseService {
   }
 
   async getParse() {
-    const pages = 143;
+    const pages = 146;
     const books: any[] = [];
     let series;
 
@@ -34,7 +34,7 @@ export class ParseService {
       const res = await fetch(`https://knijy.com/genres/59?p=${i}`);
       const data = await res.text();
 
-      Logger.log('page:', i);
+      Logger.log(`page ${i} in ${pages}`);
       const pageParse = await parse(data);
       const cart = pageParse.querySelectorAll('.media');
 

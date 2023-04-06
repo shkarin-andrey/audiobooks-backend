@@ -5,7 +5,7 @@ import { ParseService } from './parse.service';
 export class ParseController {
   constructor(private readonly parseService: ParseService) {}
 
-  @Get('api/v1/parse')
+  @Get('parse')
   getParse() {
     return this.parseService.getParse();
   }
